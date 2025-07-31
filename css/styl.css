@@ -74,7 +74,7 @@ h1,h2,h3,h4 {
     text-transform: capitalize;
     line-height: 1.25;
     margin-bottom: .0.75rem;
-
+    margin-top: 0;
 }
 h1 {
     font-size: 3rem;
@@ -134,17 +134,16 @@ span {
 }
 
 .navbar .mobile-menu-items {
-    position:absolute;
-    top : var(--nav-height);
+    position: absolute;
+    top: var(--nav-height);
     bottom: 0;
     left: 0;
     width: 100%;
     background: var(--grey-5);
     text-align: center;
     transition: var(--transition);
-    /* transform: translateX(100%);  */
-     transform: translateY(-100%);
-     z-index: 1;
+    transform: translateX(-100%);
+    z-index: 1;
 
 }
 .navbar .mobile-menu-list {
@@ -161,10 +160,10 @@ span {
 .navbar .mobile-menu-toggle {
     cursor: pointer;
 }
-.navbar .mobile-menu-items.active{
+.navbar .mobile-menu-items.active {
     /* transform: translateX(0); */
-     transform: translateY(0);
-     z-index: 2;
+     transform: translateX(0);
+     z-index: -1;
 }
 
 .navbar .mobile-menu {
@@ -172,28 +171,23 @@ span {
 }
 
 @media (max-width: 768px) {
-.navbar {
-    
-    
-    /* .main-menu,
-    icon-menu {
-        display: none;
-    } */
-      .main-menu, .icon-menu {
+.navbar { 
+   .main-menu, 
+   .icon-menu {
         display: none;
     }
   }
     .navbar .mobile-menu {
         display: block;
-        a{
+        a {
             color: var(--primary-white);
         }
     }
 }
 /* hero */
-.hero .contaner {
+.hero .container {
     max-width: 1100px;
-    margin: var(--nav-height) auto;
+    margin: var(--nav-height) auto 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -210,6 +204,8 @@ span {
         font-size: 1.5rem;
         padding: 1rem;
         margin-bottom:2.5rem;
+        color: var(--primary-white);
+
     }
 }
 .hero h1 {
@@ -237,6 +233,7 @@ span {
     border-radius: var(--radius);
     cursor: pointer;
     opacity: 0.7;
+    text-transform: uppercase;
 }
 .hero .btn:hover {
     opacity:0.7;
@@ -262,13 +259,14 @@ span {
   
    }
    .hero .btn {
-    font-size:1rem;
+    font-size: 1rem;
   }
 }
 
 /*==================== about======================= */
 .about, .services, .tours {
     padding-top:var(--nav-height);
+    margin-bottom: 4rem;
 }
 
 .about-content {
@@ -340,6 +338,46 @@ span {
 
 }
 /* services */
+.services {
+    height: 50vh;
+    background: var(--grey-10);
+}
+.services-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+
+}
+.service-title {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+
+}
+.service-title .fa-solid {
+    font-size: 1.5rem;
+    background-color: var(--grey-3);
+    padding: 1rem 1rem;
+    letter-spacing: 5px;
+    width: 4rem;
+
+}
+.service-title h3 {
+    margin: 0 1rem;
+    font-size: 1rem;
+    width: 8rem;
+
+}
+
+.service-title p {
+
+    font-size: 0.75rem;
+    margin-top: 0;
+}
 
 
 /* tours */
