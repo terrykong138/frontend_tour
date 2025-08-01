@@ -28,7 +28,7 @@
     --radius: 0.5rem;
     --light-shadow: 0 5px 15px rgba(0,0,0,0.1);
     --dark-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    --nav-height: 4rem;
+    --nav-height: 5rem;
     --nav-mobile-top: 6rem;
 }
 /* global setting */
@@ -93,7 +93,7 @@ h3 {
 }
 h4 {
     font-size: 0.875rem;
-    /* margin-top: 0; */
+   
 }
 p {
     margin-bottom: 1.25rem;
@@ -123,10 +123,12 @@ span {
         
 }
 .navbar-flex {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
+    display: flex; 
     justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    
+   
 
 }
 .menu-list, .icon-list {
@@ -136,6 +138,7 @@ span {
     a{
         color: var(--primary-4);
         font-size: 1.2rem;
+      
     }
     
 }
@@ -145,32 +148,45 @@ span {
     top: var(--nav-height);
     bottom: 0;
     left: 0;
-    width: 100%;
-    background: var(--grey-5);
+     width: 25%; 
     text-align: center;
     transition: var(--transition);
-    transform: translateX(-100%);
-    z-index: 1;
-
+    transform: translateX(600%);
+    z-index: 3;
+    border: 1px solid var(--primary-5);
+   
 }
 .navbar .mobile-menu-list {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
     padding-top: var(--nav-height);
-    gap: 2rem;
+    gap: 1.5rem;
     font-size: 1.2rem;
     margin-block: 0;
+    background: var(--primary-4);
+    opacity: 0.8;
+      li {
+        border-bottom: 1px solid var(--primary-5);
+        padding-bottom: 1rem;   
+         a {
+             color: var(var(--primary-white)) ;
+            
+         }  
+       
+     }
+     li::last-child {
+        border-bottom: 0;
+     }
+
 }
 
 .navbar .mobile-menu-toggle {
     cursor: pointer;
 }
 .navbar .mobile-menu-items.active {
-    /* transform: translateX(0); */
-     transform: translateX(0);
-     z-index: -1;
+     transform: translateX(300%);
+     z-index: 3;
 }
 
 .navbar .mobile-menu {
@@ -203,7 +219,7 @@ span {
     position: relative;
 }
 .hero {
-      background: url(../img/beach.png) center/cover no-repeat; 
+      background: url(../img/beachspot.png) center/cover no-repeat; 
     color: var(--primary-white);
     position: relative;
     text-align: center;
@@ -248,9 +264,7 @@ span {
 }
 @media (max-width: 768px) {
    .hero {
-    /* background: none; */
     background: var(--primary-5);
-    /* border: 2px solid red; */
    }
    .hero h1 {
     /* color:red; */
@@ -271,7 +285,7 @@ span {
 }
 
 /*==================== about======================= */
-.about, .services, .tours {
+.about , .services , .tours {
     padding-top:var(--nav-height);
     margin-bottom: 4rem;
 }
@@ -360,7 +374,6 @@ span {
 
 }
 
-/* @media (min-width: 1100px) {
     .services {
          height: 50vh;
         
@@ -368,16 +381,7 @@ span {
     .services-content {
         width: 1100px;;
     }
-    .service-title {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: start;
-        gap:2rem;
-        width: 16rem;
-    } 
-  
-}  */
+
 /* =================================================== */
 .service-title {
     display: flex;
@@ -392,7 +396,6 @@ span {
     background-color: var(--grey-5);
     color: var(--primary-3);
     padding: 1rem 1rem;
-    /* letter-spacing: 5px; */
     width: 4rem;
 
 }
@@ -401,7 +404,6 @@ span {
     font-size: 1rem;
     width: 7rem;
     padding-left: 0.75rem;
-    /* text-align: center; */
 
 }
 
@@ -414,20 +416,26 @@ span {
 
 /* ================================================== */
 @media (max-width: 1099px) and (min-width: 577px) {
-   .services {
-    height: 75vh;
-}
-.services-content {
+    .services {
+       height: 75vh;
+     }
+      .services-content {
     width: 100%; 
 
-}
- .service-title {
+     }
+    .service-title {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 2rem;
         width: 100%;
+        .fa-solid  {
+           margin-right: 2rem;
+        }
+        h3  {
+             padding-left: 0;
+        }
     } 
 
 
@@ -480,11 +488,12 @@ span {
 /* ========================================== */
 /* tours */
 .tours {
-    padding: 2rem;
-}
+     padding-left: 4rem;
+     padding-right: 4rem;
+} 
 .cards {
     width: 100%;
-
+   
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: start;
@@ -495,7 +504,6 @@ span {
 }
 .card {
     box-shadow: var(--dark-shadow);
-    /* transition: scale(1.1) */
 
 }
 .card:hover {
@@ -518,7 +526,7 @@ span {
 }
 .card-content {
     background: var(--primary-9);
-    padding: 1.5rem 2rem 0.5rem;
+    padding: 1.25rem 2rem 0.5rem;
     p {
         font-size: 1rem;
         color: var(--primary-7);
@@ -543,7 +551,7 @@ span {
     }
 }
 
-/* footer */
+/*==============footer========================= */
 .footer {
     height: 35vh;
     background-color: var(--primary-3);
