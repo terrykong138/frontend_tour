@@ -7,3 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("adc")
     });
 });
+
+const date = document.getElementById("date");
+date.innerHTML = new Date().getFullYear();
